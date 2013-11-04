@@ -55,7 +55,7 @@ module( 'average', {
 });
 
 test('calculating factorial for a positive number', function(){
- equal(this.simpleMath.average(15,3),9, 'average ');
+ equal(this.simpleMath.average(15,3),9, 'average');
 });
 
 test('calculating factorial for zero', function(){
@@ -64,4 +64,12 @@ test('calculating factorial for zero', function(){
 
 test('throwing an error when calculating the factorial for a negative number', function(){
  equal(this.simpleMath.average(-10,25),7, 'Result 7');
+});
+
+
+assertion = new MyAssertion();
+isPrime = assertion.isPrime;
+
+test('isPrime? and sum', function(){
+	isPrime(7, "7 is prime?");
 });
