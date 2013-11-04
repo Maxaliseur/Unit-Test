@@ -13,7 +13,7 @@ test('calculating factorial for a positive number', function(){
 });
 
 test('calculating factorial for zero', function(){
- // todo
+ equal(this.simpleMath.getFactorial(0), 1, 'Factorial of zeromust equal one');
 });
 
 test('throwing an error when calculating the factorial for a negative number', function(){
