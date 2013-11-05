@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title>JS Test Unitaire</title>
+                
+                <link rel="stylesheet" href="vendors/qunit-1.12.0.css">
+                <script src="vendors/jquery-1.10.2.min.js"></script>
+        </head>
+        <body>
+                <div id="qunit"></div>
+                <div id="qunit-fixture"></div>
+                <script src="vendors/qunit-1.12.0.js"></script>
+                <script>
+                QUnit.config.testTimeout = 6000;
+                        doAjaxOperation = function(data, successCallback, failureCallback){
+                                return $.ajax({
+                                        type:'GET',
+                                        url: 'php/json_data_combo.php',
+                                        data: data,
+                                        success: successCallback,
+                                        failure : failureCallback
+                                })
+                        };
+                        asyncTest("Making a REAL Ajax testing", function(){
+                                var successCallback = function (response){
+                                        //var resultMessage = response.xmlhttp.responseText;
+                                        // Validate the result message using the QUnit assertions
+                                        ok(true, "asynchronous PASS!");
+                                        start();
+                                }
+
+                                var failureCallback = function (){
+                                        ok(false, "Must fail");
+                                        start();
+                                };
+
+                                doAjaxOperation({name : 'Maxime'}, successCallback, failureCallback);
+                        });
+                </script>
+        </body>
+</html>

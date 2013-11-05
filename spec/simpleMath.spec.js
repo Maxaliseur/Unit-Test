@@ -73,3 +73,13 @@ isPrime = assertion.isPrime;
 test('isPrime? and sum', function(){
 	isPrime(7, "7 is prime?");
 });
+
+tes("test function1", function(){
+	stop();
+	my_var = 'MAX_LA_MeNaCE';
+	window.setTimeout(function(){
+
+	})
+})
+
+
